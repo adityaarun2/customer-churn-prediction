@@ -1,0 +1,14 @@
+# data & artifacts
+/data/
+/models/
+/reports/
+
+
+# python
+__pycache__/
+*.pyc
+.venv/
+
+
+# streamlit
+.streamlit/

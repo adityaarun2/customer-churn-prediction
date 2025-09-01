@@ -1,0 +1,23 @@
+seed: 42
+
+data:
+  csv_path: null
+  target: Churn
+  positive_label: "Yes"
+
+model:
+  name: xgb
+  params: {}
+
+split:
+  test_size: 0.2
+  stratify: true
+
+output:
+  model_path: models/pipeline.joblib
+  metrics_path: reports/metrics.json
+  feature_names_path: models/feature_names.json
+  background_path: models/background.joblib
+  meta_path: models/meta.json
+  val_predictions_path: reports/val_predictions.csv
+  threshold_curve_path: reports/threshold_curve.csv

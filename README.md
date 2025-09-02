@@ -76,3 +76,20 @@ To remove model checkpoints, caches, and reports:
 ```bash
 make clean
 ```
+
+## Results
+
+After training on the Telco Customer Churn dataset using Logistic Regression, the following performance metrics were obtained:
+
+| Model               | ROC‑AUC | PR‑AUC | Best Threshold |
+|---------------------|:-------:|:------:|:--------------:|
+| Logistic Regression | 0.832   | 0.648  | 0.47           |
+
+- The model was trained on **5,174 non-churn** and **1,869 churn** customers.
+- Train/Test split retained class distribution:
+  - **Train:** 4,139 non-churn, 1,495 churn
+  - **Test:** 1,035 non-churn, 374 churn
+
+> ROC-AUC (Receiver Operating Characteristic - Area Under Curve) shows how well the model distinguishes between classes.
+>
+> PR-AUC (Precision-Recall AUC) is especially useful for imbalanced datasets like churn.

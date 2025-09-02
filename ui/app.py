@@ -19,7 +19,30 @@ VAL_PRED_CSV = Path("reports/val_predictions.csv")
 CURVE_CSV    = Path("reports/threshold_curve.csv")
 
 st.set_page_config(page_title="Churn Radar", layout="wide")
-st.title("Churn Radar — MVP + Explainability")
+st.title("Churn Radar - Customer Churn Prediction")
+st.caption("Predicting Customer Churn with Explainability and ROI-Aware Thresholding")
+st.markdown(
+    """
+    <style>
+        .block-container {
+            padding: 2rem 3rem 2rem 3rem;
+        }
+        .stButton > button {
+            background-color: #00B8A9;
+            color: white;
+            font-weight: bold;
+        }
+        .stSlider > div[role='slider'] {
+            background-color: #00B8A9;
+        }
+        .css-1aumxhk {  /* Fix for metric font size */
+            font-size: 1.5rem !important;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 
 def cost_optimal_threshold(curve_df: pd.DataFrame, cost_fp: float, cost_fn: float) -> tuple[float, float]:
     c = curve_df.copy()
@@ -186,7 +209,7 @@ if submitted:
     proba = float(pipe.predict_proba(row)[:, 1][0])
     pred = int(proba >= threshold)
     st.metric("Churn Probability", f"{proba:.2%}")
-    st.write(f"Decision (threshold={threshold:.2f}): **{'Churn' if pred==1 else 'Stay'}**")
+    st.write(f"Decision (threshold={threshold:.2f}): **{'Customer likely to churn' if pred==1 else 'Customer likely to stay'}**")
 
     with st.expander("Explain this prediction (SHAP)", expanded=False):
         sv, fn = compute_shap_for_row(row)

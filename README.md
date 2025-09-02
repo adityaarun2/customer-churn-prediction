@@ -53,7 +53,7 @@ This opens the customer churn prediction dashboard at [http://localhost:8501](ht
 
 ---
 
-### 🐳 Option 2: Run with Docker
+### Option 2: Run with Docker
 
 #### 1. Build the Docker Image
 ```bash

@@ -77,13 +77,15 @@ To remove model checkpoints, caches, and reports:
 make clean
 ```
 
+A sample dataset is included in the repo at `customer-churn-prediction/samples/sample_batch.csv`, which is a subset of the Telco dataset and can be used to test the model’s prediction capability.
+
 ## Results
 
 After training on the Telco Customer Churn dataset using Logistic Regression, the following performance metrics were obtained:
 
 | Model               | ROC‑AUC | PR‑AUC | Best Threshold |
 |---------------------|:-------:|:------:|:--------------:|
-| Logistic Regression | 0.832   | 0.648  | 0.47           |
+| XGBoost             | 0.832   | 0.648  | 0.47           |
 
 - The model was trained on **5,174 non-churn** and **1,869 churn** customers.
 - Train/Test split retained class distribution:

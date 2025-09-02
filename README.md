@@ -6,7 +6,9 @@ A production-style churn prediction project built on the public IBM Telco Custom
 
 ## Why churn prediction matters
 
-Churn (customers leaving) directly impacts revenue and growth. Predicting who is at risk lets teams:
+Churn (also called customer attrition) refers to when a customer stops using a company’s product or service, such as canceling a subscription or switching to a competitor. In this context, churn prediction helps identify users who are likely to discontinue their telecom service so the business can take targeted actions to retain them.
+
+Churn directly impacts revenue and growth. Predicting who is at risk lets teams:
 - prioritize retention campaigns,
 - allocate incentives strategically,
 - forecast revenue more accurately.
